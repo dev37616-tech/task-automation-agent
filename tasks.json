@@ -1,0 +1,27 @@
+[
+  {
+    "id": 1,
+    "name": "Organize Downloads",
+    "type": "organize_files",
+    "params": {
+      "folder": "Downloads"
+    },
+    "schedule_interval_sec": 0,
+    "last_run": null,
+    "next_run": null,
+    "enabled": true
+  },
+  {
+    "id": 2,
+    "name": "Daily cleanup demo",
+    "type": "clean_temp",
+    "params": {
+      "folder": "./demo_folder",
+      "older_than_days": 7
+    },
+    "schedule_interval_sec": 86400,
+    "last_run": null,
+    "next_run": null,
+    "enabled": false
+  }
+]

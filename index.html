@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>⚙️ Task Automation Agent</title>
+<link rel="stylesheet" href="style.css" />
+</head>
+<body>
+<header>
+  <div class="brand">⚙️ Task Automation Agent</div>
+  <div><span id="status">● connecting…</span>
+  <button onclick="loadAll()">↻ Refresh</button></div>
+</header>
+<main>
+  <section class="panel">
+    <h2>➕ New Task</h2>
+    <input id="tName" placeholder="Task name (e.g. Organize Downloads)" />
+    <select id="tType">
+      <option value="organize_files">📁 Organize files by extension</option>
+      <option value="bulk_rename">✏️ Bulk rename (pattern)</option>
+      <option value="clean_temp">🧹 Delete old files</option>
+      <option value="write_note">📝 Write note file</option>
+      <option value="fetch_url">🌐 Fetch URL title</option>
+    </select>
+    <div id="paramBox"></div>
+    <label>Repeat every (seconds, 0 = manual only)</label>
+    <input id="tInterval" type="number" value="0" min="0" />
+    <button class="primary" onclick="createTask()">Create Task</button>
+    <div id="result" class="result"></div>
+    <h2>⚡ Quick Actions</h2>
+    <div class="quick">
+      <button onclick="quickNote()">📝 Quick note</button>
+      <button onclick="quickFetch()">🌐 Fetch example.com</button>
+    </div>
+  </section>
+  <section class="panel">
+    <h2>📋 Tasks</h2>
+    <div id="taskList"></div>
+    <h2>📜 Logs</h2>
+    <pre id="logs"></pre>
+  </section>
+</main>
+<footer>Python + HTML · port 8000 · tasks saved to tasks.json</footer>
+<script src="script.js"></script>
+</body>
+</html>
